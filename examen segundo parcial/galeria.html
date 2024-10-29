@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Agencia de Viajes - San Luis Potosí</header>
+    <nav>
+        <a href="inicio_sesion.html">Inicio de Sesión</a>
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contactanos.html">Contáctanos</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+    </nav>
+    <section>
+        <h2>Galería</h2>
+        <div class="carousel">
+            <img src="san 1.jpg" alt="Destino 1" class="active">
+            <img src="san 2.jpg" alt="Destino 2">
+            <img src="san 3.jpg" alt="Destino 3">
+            <img src="san 4.jpg" alt="Destino 4">
+            <img src="san 5.jpg" alt="Destino 5">
+            <img src="san 6.jpg" alt="Destino 6">
+            <img src="san 7.jpg" alt="Destino 7">
+            <img src="san 10.jpg" alt="Destino 8">
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 Agencia de Viajes
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel img');
+            images[currentIndex].classList.add('active');
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNextImage, 3000);
+        });
+    </script>
+</body>
+</html>
